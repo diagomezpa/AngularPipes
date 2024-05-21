@@ -48,11 +48,12 @@ export class UncommonPageComponent {
     address: 'Ottawa, Canada',
   };
 
-  // Async Pipe
+  // Async Pipe retorna 1 2 3 y asi
   public myObservableTimer: Observable<number> = interval(2000).pipe(
     tap((value) => console.log('tap:', value))
   );
 
+  // Async Pipe no cancela las promesas como lo hace con los obsevables
   public promiseValue: Promise<string> = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('Tenemos data en la promesa.');
